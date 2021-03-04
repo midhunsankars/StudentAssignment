@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+</head>
+<body>
+<form method="POST" action="/update/{{ uv.id }}" enctype="multipart/form-data">
+    {% csrf_token %}
+        <input type="text" name="name" value="{{ uv.name }}"><br><br>
+        <input type="date" name="dob" value="{{ uv.dob }}"><br><br>
+        <input type="number" name="phone" value="{{ uv.phone }}"><br><br>
+        photo:<img src="{{ uv.image }}" width="80" height="60"><br><br>
+        <input type="file" name="image" value="{{ uv.image }}"><br><br>
+        <input type="submit" name="submit" value="edit">
+</form>
+</body>
+</html>
